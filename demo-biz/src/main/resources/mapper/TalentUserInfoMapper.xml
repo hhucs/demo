@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~
+  ~      Copyright (c) 2018-2025, lengleng All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~ Redistributions of source code must retain the above copyright notice,
+  ~  this list of conditions and the following disclaimer.
+  ~  Redistributions in binary form must reproduce the above copyright
+  ~  notice, this list of conditions and the following disclaimer in the
+  ~  documentation and/or other materials provided with the distribution.
+  ~  Neither the name of the pig4cloud.com developer nor the names of its
+  ~  contributors may be used to endorse or promote products derived from
+  ~  this software without specific prior written permission.
+  ~  Author: lengleng (wangiegie@gmail.com)
+  ~
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pig4cloud.pig.demo.mapper.TalentUserInfoMapper">
+
+  <resultMap id="talentUserInfoMap" type="com.pig4cloud.pig.demo.entity.TalentUserInfo">
+    <id property="id" column="id"/>
+    <result property="uid" column="uid"/>
+    <result property="uniqueId" column="unique_id"/>
+    <result property="nickName" column="nick_name"/>
+    <result property="avatarLink" column="avatar_link"/>
+    <result property="province" column="province"/>
+    <result property="city" column="city"/>
+    <result property="gender" column="gender"/>
+    <result property="totalLike" column="total_like"/>
+    <result property="avgLike" column="avg_like"/>
+    <result property="fansCount" column="fans_count"/>
+    <result property="focusCount" column="focus_count"/>
+    <result property="realFansCount" column="real_fans_count"/>
+    <result property="price" column="price"/>
+    <result property="value" column="value"/>
+    <result property="type" column="type"/>
+    <result property="totalPlayNum" column="total_play_num"/>
+    <result property="avgPlayNum" column="avg_play_num"/>
+    <result property="prePlayNum" column="pre_play_num"/>
+    <result property="playNumUnit" column="play_num_unit"/>
+    <result property="interactionNum" column="interaction_num"/>
+    <result property="totalCommentNum" column="total_comment_num"/>
+    <result property="avgComment" column="avg_comment"/>
+    <result property="totalShareNum" column="total_share_num"/>
+    <result property="avgShareNum" column="avg_share_num"/>
+    <result property="totalDynaicNum" column="total_dynaic_num"/>
+    <result property="communicationValue" column="communication_value"/>
+    <result property="fansFeature" column="fans_feature"/>
+    <result property="age" column="age"/>
+    <result property="signature" column="signature"/>
+    <result property="videoCount" column="video_count"/>
+    <result property="isVerified" column="is_verified"/>
+    <result property="birthday" column="birthday"/>
+    <result property="cpm" column="cpm"/>
+    <result property="xtPrePlayNum" column="xt_pre_play_num"/>
+    <result property="xtCpm" column="xt_cpm"/>
+    <result property="xtOrderCompleteNum" column="xt_order_complete_num"/>
+    <result property="other" column="other"/>
+    <result property="platformId" column="platform_id"/>
+    <result property="favoritingCount" column="favoriting_count"/>
+    <result property="datafrom" column="datafrom"/>
+    <result property="oid" column="oid"/>
+    <result property="orderAvgTimeCost" column="order_avg_time_cost"/>
+    <result property="topScore" column="top_score"/>
+    <result property="cooperateIndex" column="cooperate_index"/>
+    <result property="spreadIndex" column="spread_index"/>
+    <result property="userStyle" column="user_style"/>
+  </resultMap>
+</mapper>
