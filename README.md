@@ -17,7 +17,7 @@ Vue.prototype.$echarts = echarts
 
 3. 把db目录下的两个SQL文件插入mysql，生成pig_demo数据库，两个表和相关的menu表单
 
-4. 独立运行DemoApplication.java，后台开启新的微服务，检查MYSQl数据库是否正常
+4. 打开application.yml, 更新本机的的mysql密码，独立运行DemoApplication.java，后台开启新的微服务，检查MYSQl数据库是否正常
 
 5. 将demo-ui文件夹下的文件，移动到原有pig-ui/src  合并
 
