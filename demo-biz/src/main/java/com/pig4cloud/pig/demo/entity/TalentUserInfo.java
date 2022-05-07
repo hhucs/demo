@@ -19,6 +19,8 @@ package com.pig4cloud.pig.demo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.pig4cloud.pig.common.mybatis.base.BaseEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -34,7 +36,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @TableName("talent_user_info")
 @EqualsAndHashCode(callSuper = true)
-@Schema(name = "")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class TalentUserInfo extends BaseEntity {
 
     /**

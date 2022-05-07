@@ -17,18 +17,29 @@
 package com.pig4cloud.pig.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.pig4cloud.pig.common.core.util.R;
 import com.pig4cloud.pig.demo.entity.TalentUserInfo;
 import com.pig4cloud.pig.demo.mapper.TalentUserInfoMapper;
 import com.pig4cloud.pig.demo.service.TalentUserInfoService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
- * 
+ *
  *
  * @author pig code generator
  * @date 2022-05-06 14:33:01
  */
 @Service
 public class TalentUserInfoServiceImpl extends ServiceImpl<TalentUserInfoMapper, TalentUserInfo> implements TalentUserInfoService {
+    @Resource
+    private TalentUserInfoMapper talentUserInfoMapper;
+    public TalentUserInfo selectPartialById(Long id){
+         return talentUserInfoMapper.selectPartialById(id);
+    }
 
+    public String getMaxId(){
+        return talentUserInfoMapper.getMaxId();
+    }
 }

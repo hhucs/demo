@@ -21,6 +21,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pig4cloud.pig.common.core.util.R;
 import com.pig4cloud.pig.common.log.annotation.SysLog;
+import com.pig4cloud.pig.common.security.annotation.Inner;
 import com.pig4cloud.pig.demo.entity.TalentUserInfo;
 import com.pig4cloud.pig.demo.service.TalentUserInfoService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -33,7 +34,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * 
+ *
  *
  * @author pig code generator
  * @date 2022-05-06 14:33:01
@@ -43,6 +44,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/talentuserinfo" )
 @Tag(name = "管理")
 @SecurityRequirement(name = HttpHeaders.AUTHORIZATION)
+
 public class TalentUserInfoController {
 
     private final  TalentUserInfoService talentUserInfoService;
@@ -50,7 +52,7 @@ public class TalentUserInfoController {
     /**
      * 分页查询
      * @param page 分页对象
-     * @param talentUserInfo 
+     * @param talentUserInfo
      * @return
      */
     @Operation(summary = "分页查询", description = "分页查询")
@@ -59,6 +61,8 @@ public class TalentUserInfoController {
     public R getTalentUserInfoPage(Page page, TalentUserInfo talentUserInfo) {
         return R.ok(talentUserInfoService.page(page, Wrappers.query(talentUserInfo)));
     }
+
+
 
 
     /**
@@ -75,7 +79,7 @@ public class TalentUserInfoController {
 
     /**
      * 新增
-     * @param talentUserInfo 
+     * @param talentUserInfo
      * @return R
      */
     @Operation(summary = "新增", description = "新增")
@@ -83,12 +87,13 @@ public class TalentUserInfoController {
     @PostMapping
     @PreAuthorize("@pms.hasPermission('demo_talentuserinfo_add')" )
     public R save(@RequestBody TalentUserInfo talentUserInfo) {
+        talentUserInfo.setId(Integer.valueOf(talentUserInfoService.getMaxId())+1);
         return R.ok(talentUserInfoService.save(talentUserInfo));
     }
 
     /**
      * 修改
-     * @param talentUserInfo 
+     * @param talentUserInfo
      * @return R
      */
     @Operation(summary = "修改", description = "修改")

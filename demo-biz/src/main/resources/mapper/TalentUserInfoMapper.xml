@@ -72,4 +72,15 @@
     <result property="spreadIndex" column="spread_index"/>
     <result property="userStyle" column="user_style"/>
   </resultMap>
+
+  <!--查询-->
+  <select id="selectPartialById" resultType="com.pig4cloud.pig.demo.entity.TalentUserInfo">
+    select nick_name,xt_cpm,city,province,total_like,fans_Count,real_fans_count from talent_user_info where id = #{id}
+  </select>
+
+  <select id="getMaxId" resultType="String">
+    select max(id) from talent_user_info
+ </select>
+
+
 </mapper>

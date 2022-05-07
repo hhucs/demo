@@ -15,23 +15,18 @@ spring:
       - nacos:application-@profiles.active@.yml
       - nacos:${spring.application.name}-@profiles.active@.yml
   datasource:  # 示例数据源配置，注意修改
-    class=org:
-      apache:
-        commons:
-          dbcp:
-            BasicDataSource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://pig-mysql:3306/pig_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
-
-datav:
-  license: c21hcnQtbGljZW5zZaztAAVzcgAqb3JnLnNtYXJ0Ym9vdC5saWNlbnNlLmNsaWVudC5MaWNlbnNlRW50aXR5aZMraDxQLCsCAAVKAAlhcHBseVRpbWVKAApleHBpcmVUaW1lTAADbWQ1dAASTGphdmEvbGFuZy9TdHJpbmc7WwAKcHVibGljS2V5c3QAAltCWwAJc3BsaXRGbGFncQB+AAJ4cAAAAYCHHs7MAAABgI/MuAB0ACBkNDFkOGNkOThmMDBiMjA0ZTk4MDA5OThlY2Y4NDI3ZXVyAAJbQqzzF/gGCFTgAgAAeHAAAACiMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4mt51inQ4YsCMzNoUd/dAgCqVrWRDMK29ewcPUOyp0+woOl+rpVhisqTwPXyufycfp5fq9IWXxNzcw6x/V7u5Qdp0m0A8I2bpgQzvB/lxNSxu+a65X1AJ0wlYPOSTYhwiT8PzzqqGmdSZveyCFYM16LFZA2KMYWP8WWxdh52y6wIDAQABdXEAfgAFAAAAAm0Ud7ptFAAAAYCHHs7MAAABgI/MuABtFKIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALia3nWKdDhiwIzM2hR390CAKpWtZEMwrb17Bw9Q7KnT7Cg6X6ulWGKypPA9fK5/Jx+nl+r0hZfE3NzDrH9Xu7lB2nSbQDwjZumBDO8H+XE1LG75rrlfUAnTCVg85JNiHCJPw/POqoaZ1Jm97IIVgzXosVkDYoxhY/xZbF2HnbLrAgMBAAFtFAA=
+    password: nj130131
 
 # spring security 配置
 security:
   oauth2:
+    ignore:
+     urls:
+      # - /api/**
     client:
       client-id: pig
       client-secret: pig

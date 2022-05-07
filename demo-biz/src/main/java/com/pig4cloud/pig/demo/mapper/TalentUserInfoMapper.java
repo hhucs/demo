@@ -20,14 +20,17 @@ package com.pig4cloud.pig.demo.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pig4cloud.pig.demo.entity.TalentUserInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
- * 
+ *
  *
  * @author pig code generator
  * @date 2022-05-06 14:33:01
  */
 @Mapper
 public interface TalentUserInfoMapper extends BaseMapper<TalentUserInfo> {
+    TalentUserInfo selectPartialById(@Param("id") Long id);
 
+    String getMaxId();
 }

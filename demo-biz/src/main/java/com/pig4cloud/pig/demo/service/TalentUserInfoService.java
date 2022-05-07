@@ -19,13 +19,18 @@ package com.pig4cloud.pig.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.pig4cloud.pig.demo.entity.TalentUserInfo;
+import com.pig4cloud.pig.common.core.util.R;
 
 /**
- * 
+ *
  *
  * @author pig code generator
  * @date 2022-05-06 14:33:01
  */
 public interface TalentUserInfoService extends IService<TalentUserInfo> {
+
+     TalentUserInfo selectPartialById(Long id);
+
+     String getMaxId();
 
 }
